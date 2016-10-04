@@ -35,21 +35,18 @@ function move(command) {
     var xIncrease = 0, yIncrease = 0;
     if (self.direction === 'N') {
         yIncrease = -1;
-    } else if (self.direction === 'E') { // East
+    } else if (self.direction === 'E') {
         xIncrease = 1;
-    } else if (self.direction === 'S') { // South
+    } else if (self.direction === 'S') {
         yIncrease = 1;
-    } else if (self.direction === 'W') { // West
+    } else if (self.direction === 'W') {
         xIncrease = -1;
     }
-    if (command === 'b') { // Backward
+    if (command === 'b') {
         xIncrease *= -1;
         yIncrease *= -1;
     }
-    var newLocation = [self.location[0] + xIncrease, self.location[1] + yIncrease];
-    if (isObstacle(newLocation)) {
-        return false;
-    }
-    self.location = newLocation;
-    return true;
+
 }
+
+
